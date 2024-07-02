@@ -1,6 +1,8 @@
 import { ModeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { CheckCheck, MedalIcon } from "lucide-react";
+import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default function Home() {
   return (
@@ -21,7 +23,11 @@ export default function Home() {
           keep your work in track with collection feature.
         </p>
       </div>
-      <Button size={"lg"}>Get Started</Button>
+
+      <Button size={"lg"} asChild>
+        <Link href={"/dashboard"}>Get Started</Link>
+      </Button>
+
       {/* <ModeToggle /> */}
     </main>
   );

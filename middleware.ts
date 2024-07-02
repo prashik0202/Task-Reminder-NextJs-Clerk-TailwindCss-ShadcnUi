@@ -12,9 +12,12 @@ const isPublicRoute = createRouteMatcher(["/"]);
 
 export default clerkMiddleware((auth, req) => {
   if (isProtectedRoute(req)) auth().protect();
-  let path = "/dashboard";
-  const publicRoute = new URL(path, req.url);
-  if (isPublicRoute(req) && auth()) return NextResponse.redirect(publicRoute);
+  // let path = "/dashboard";
+  // const privateRoute = new URL(path, req.url);
+  // if (isPublicRoute(req) && auth()) return NextResponse.redirect(privateRoute);
+  // let pathPublic = "/";
+  // const publicRoute = new URL(pathPublic, req.url);
+  // if (!auth()) return NextResponse.redirect(publicRoute);
 });
 
 export const config = {
